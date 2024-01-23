@@ -6,11 +6,6 @@ function GuessInput() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (guessTerm.length !== 5) {
-      window.alert("Please enter exactly 5 characters. 😉");
-      return;
-    }
-
     console.log({ guessTerm });
 
     setGuessTerm("");
@@ -23,6 +18,8 @@ function GuessInput() {
         required={true}
         minLength={5}
         maxLength={5}
+        pattern="[a-zA-Z]{5}"
+        title="5 letter word"
         id="guess-input"
         type="text"
         value={guessTerm}
